@@ -20,10 +20,8 @@ gunluk_iyilesen_sayisi = imp.fit_transform(gunluk_iyilesen_sayisi)
 
 pf = PolynomialFeatures(degree = 11) 
 X_Polynom = pf.fit_transform(X)
-
 polynom = LinearRegression()
 lr = LinearRegression()
-
 
 
 polynom.fit(X_Polynom, gunluk_hasta_sayisi)
@@ -39,7 +37,6 @@ plt.ylabel('Hasta Sayısı')
 plt.show()
 
 
-
 polynom.fit(X_Polynom, gunluk_test_sayisi)
 p = polynom.predict(X_Polynom)
 lr.fit(X, gunluk_test_sayisi)
@@ -53,7 +50,6 @@ plt.ylabel('Test Sayısı')
 plt.show()
 
 
-
 polynom.fit(X_Polynom, gunluk_vefat_sayisi)
 p = polynom.predict(X_Polynom)
 lr.fit(X, gunluk_vefat_sayisi)
@@ -65,7 +61,6 @@ plt.title('Günlere Göre Vefat Sayısı')
 plt.xlabel('Günler')
 plt.ylabel('Vefat Sayısı')
 plt.show()
-
 
 
 polynom.fit(X_Polynom, gunluk_iyilesen_sayisi)
